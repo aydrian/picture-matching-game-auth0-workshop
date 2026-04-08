@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { authMiddleware, handleCallback, handleLogout } from "./auth";
-import { addEmail, getAllEmails, getEmailCount } from "./kv";
+import { addEmail, clearAllEmails, getAllEmails, getEmailCount } from "./kv";
 import { renderAdmin, renderForm } from "./views";
 
 export interface Env {
@@ -73,6 +73,11 @@ app.get("/admin", async (c) => {
 app.get("/admin/api/emails", async (c) => {
   const emails = await getAllEmails(c.env.EMAILS);
   return c.json(emails);
+});
+
+app.delete("/admin/api/emails", async (c) => {
+  await clearAllEmails(c.env.EMAILS);
+  return c.json({ success: true });
 });
 
 export default app;

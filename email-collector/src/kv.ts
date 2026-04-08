@@ -47,6 +47,14 @@ export async function getAllEmails(kv: KVNamespace): Promise<EmailEntry[]> {
   return entries;
 }
 
+export async function clearAllEmails(kv: KVNamespace): Promise<void> {
+  const listRaw = await kv.get("email_list");
+  const list: string[] = listRaw ? JSON.parse(listRaw) : [];
+
+  await Promise.all(list.map((email) => kv.delete(`email:${email}`)));
+  await kv.delete("email_list");
+}
+
 export async function getEmailCount(kv: KVNamespace): Promise<number> {
   const listRaw = await kv.get("email_list");
   if (!listRaw) return 0;

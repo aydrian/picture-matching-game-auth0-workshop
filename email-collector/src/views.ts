@@ -414,6 +414,19 @@ export function renderAdmin(emails: EmailEntry[]): string {
       transform: none;
     }
 
+    .btn-danger {
+      background: transparent;
+      border: 1px solid var(--error);
+      color: var(--error);
+    }
+
+    .btn-danger:hover {
+      background: var(--error);
+      color: #fff;
+      box-shadow: none;
+      transform: none;
+    }
+
     .csv-box {
       background: var(--bg);
       border: 1px solid var(--border);
@@ -554,6 +567,10 @@ export function renderAdmin(emails: EmailEntry[]): string {
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 6 1 8 4 10"/><polyline points="12 6 15 8 12 10"/><line x1="9.5" y1="3" x2="6.5" y2="13"/></svg>
         Toggle Raw
       </button>
+      <button class="btn btn-danger" onclick="clearAll()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 13 6"/><path d="M5 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/><path d="M12 6v7a1 1 0 01-1 1H5a1 1 0 01-1-1V6"/></svg>
+        Clear All
+      </button>
     </div>
 
     <div id="csv-box" class="csv-box animate-in">${escapeHtml(csvList)}</div>
@@ -591,6 +608,12 @@ export function renderAdmin(emails: EmailEntry[]): string {
 
     function toggleRaw() {
       document.getElementById('csv-box').classList.toggle('visible');
+    }
+
+    async function clearAll() {
+      if (!confirm('Are you sure you want to clear all emails? This cannot be undone.')) return;
+      await fetch('/admin/api/emails', { method: 'DELETE' });
+      location.reload();
     }
   </script>
 </body>
