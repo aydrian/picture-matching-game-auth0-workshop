@@ -75,7 +75,7 @@ After your changes, the section should look like this (starting around line 108)
 
 The key changes:
 - The `<a>` link is now **uncommented** and active
-- The disabled placeholder `<div>` is **deleted**
+- The placeholder `<div>` is **deleted**
 - The "not yet implemented" `<p>` tag is **deleted**
 
 </details>
@@ -117,7 +117,7 @@ pnpm dev:app
 2. Log in if you're not already
 3. Navigate to `/settings`
 
-You should now see an **active** "Connect Google Drive" button with the Google icon — no longer grayed out!
+You should now see an **active** "Connect Google Drive" button with the Google icon — replacing the placeholder!
 
 ### Step 3: Connect Your Google Account
 
@@ -220,7 +220,7 @@ The crucial insight: **the AI agent accesses the user's data through your backen
 
 ## ✅ Checkpoint
 
-- [ ] Change 6: Connect Google Drive button is active (not disabled)
+- [ ] Change 6: Connect Google Drive button is active (replaces the placeholder)
 - [ ] Clicking the button redirects to Google's consent screen
 - [ ] After granting permission, settings page shows "Google Drive Connected"
 - [ ] Loading a folder displays your images

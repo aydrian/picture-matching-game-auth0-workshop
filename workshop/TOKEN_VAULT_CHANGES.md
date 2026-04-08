@@ -116,7 +116,7 @@ try {
 **File**: `app/components/settings-content.tsx` (lines ~109–137)
 
 **Starter code:**
-The real `<a>` link is commented out, and a disabled placeholder `<div>` is shown instead.
+The real `<a>` link is commented out, and a placeholder `<div>` is shown instead.
 
 **Workshop user steps:**
 1. Uncomment the `<a>` block (remove `{/*` and `*/}` wrapping it)

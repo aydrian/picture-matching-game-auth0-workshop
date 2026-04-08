@@ -118,7 +118,7 @@ The game uses default animal images stored in `/public/cards/`.
 
 Navigate to `/settings` (or click the gear icon). You'll see:
 
-- A **disabled** "Connect Google Drive" button
+- A "Connect Google Drive" placeholder (not yet functional)
 - A message: *"Token Vault integration not yet implemented. Complete the workshop steps to enable this."*
 - A preview of the default game images
 
@@ -164,7 +164,7 @@ Before moving on, confirm:
 - [ ] Auth0 setup completed successfully
 - [ ] The app is running at `http://localhost:3000`
 - [ ] You can log in and play the game with default images
-- [ ] The Settings page shows the disabled "Connect Google Drive" button
+- [ ] The Settings page shows the "Connect Google Drive" placeholder
 
 ---
 

@@ -204,7 +204,7 @@ pnpm dev:app
 
 Go to `http://localhost:3000/settings`. You should see:
 
-- The "Connect Google Drive" button is still **disabled** (we haven't enabled it in the UI yet — that's the next module!)
+- The "Connect Google Drive" button is still a **placeholder** (we haven't added the real button in the UI yet — that's the next module!)
 - No errors in the terminal/console
 - The app still works normally
 
