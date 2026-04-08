@@ -19,16 +19,25 @@ If you haven't already, click the button below to open this repository in a new 
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=aydrian/picture-matching-game-auth0-workshop)
 
+> **Important**
+> While your Codespace is setting up, please **register your Google email** so it can be approved for use with the workshop's Google integration:
+>
+> **[Register your Google email here](https://email-collector.aydrian-demo.workers.dev/)**
+>
+> This workshop uses a shared Google OAuth app in testing mode. Your `@gmail.com` address must be added as an approved test user before you can connect Google Drive in Module 03.
+
 > **Note**
 > The initial setup takes 2–3 minutes. The devcontainer installs Node.js 18, pnpm, the Auth0 CLI, and all project dependencies automatically.
 
-Once your Codespace is ready, open a terminal.
+Once your Codespace is ready, you'll need to open a terminal.
 
 ---
 
 ## 🧑‍💻 Step 2: Verify Your Tools
 
-Run these commands to confirm everything is installed:
+Your Codespace runs VS Code in the browser. If a terminal panel isn't already open at the bottom of the screen, you can open one by pressing `` Ctrl+` `` (or `` Cmd+` `` on Mac), or by going to the menu: **Terminal > New Terminal**.
+
+Run these commands in the terminal to confirm everything is installed:
 
 ```bash
 auth0 --version
