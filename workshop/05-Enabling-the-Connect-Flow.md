@@ -170,7 +170,7 @@ Congratulations — you've built a secure integration between your app and Googl
 
 **"Unexpected error" after clicking Connect Google Drive**
 - Check that `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are set in `app/.env.local`
-- Verify the Google connection exists: `auth0 api GET /api/v2/connections --query "name=google-oauth2"`
+- Verify the Google connection exists: `auth0 api GET /connections --query name=google-oauth2`
 - Make sure `enableConnectAccountEndpoint: true` is set in `app/lib/auth0.ts`
 
 **Connected, but "Folder not found"**

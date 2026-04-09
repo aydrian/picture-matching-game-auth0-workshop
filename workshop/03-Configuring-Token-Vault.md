@@ -33,8 +33,8 @@ This is a two-step process: first we'll look up the existing connection's ID, th
 **Step 1 — Get the connection ID:**
 
 ```bash
-CONNECTION_ID=$(auth0 api GET /api/v2/connections \
-  --query "name=google-oauth2&strategy=google-oauth2" | jq -r '.[0].id')
+CONNECTION_ID=$(auth0 api GET /connections \
+  --query name=google-oauth2 --query strategy=google-oauth2 | jq -r '.[0].id')
 echo $CONNECTION_ID
 ```
 
@@ -43,7 +43,7 @@ You should see a connection ID like `con_aBcDeFgHiJkLmNoP`. This is the unique i
 **Step 2 — Update the connection:**
 
 ```bash
-auth0 api PATCH /api/v2/connections/$CONNECTION_ID \
+auth0 api PATCH /connections/$CONNECTION_ID \
   --data '{
     "options": {
       "client_id": "'"$GOOGLE_CLIENT_ID"'",
@@ -72,7 +72,7 @@ You should see a JSON response with the updated connection details.
 ### ✅ Verify the Connection
 
 ```bash
-auth0 api GET /api/v2/connections --query "name=google-oauth2"
+auth0 api GET /connections --query name=google-oauth2
 ```
 
 You should see your connection in the output with the updated scopes, including `https://www.googleapis.com/auth/drive.readonly`.
@@ -134,7 +134,7 @@ echo $CLIENT_ID
 **Enable the Token Vault grant type:**
 
 ```bash
-auth0 api PATCH /api/v2/clients/$CLIENT_ID \
+auth0 api PATCH /clients/$CLIENT_ID \
   --data '{
     "grant_types": [
       "authorization_code",
@@ -169,7 +169,7 @@ Token Vault uses Auth0's **My Account API** to manage connected accounts. This A
 ```bash
 TENANT_DOMAIN=$(auth0 tenants domain)
 
-auth0 api POST /api/v2/resource-servers \
+auth0 api POST /resource-servers \
   --data '{
     "identifier": "https://'"$TENANT_DOMAIN"'/me/",
     "name": "Auth0 My Account",
@@ -205,7 +205,7 @@ auth0 api POST /api/v2/resource-servers \
 Now we need to **authorize** your application to use the My Account API. A client grant links your app to the API and specifies which scopes it can request.
 
 ```bash
-auth0 api POST /api/v2/client-grants \
+auth0 api POST /client-grants \
   --data '{
     "client_id": "'"$CLIENT_ID"'",
     "audience": "https://'"$TENANT_DOMAIN"'/me/",
@@ -244,7 +244,7 @@ auth0 api POST /api/v2/client-grants \
 Finally, we need to configure a **Multi-Resource Refresh Token** policy. This allows a single refresh token to work across both your app and the My Account API, which is required for Token Vault to seamlessly retrieve external provider tokens.
 
 ```bash
-auth0 api PATCH /api/v2/clients/$CLIENT_ID \
+auth0 api PATCH /clients/$CLIENT_ID \
   --data '{
     "refresh_token": {
       "policies": [{
