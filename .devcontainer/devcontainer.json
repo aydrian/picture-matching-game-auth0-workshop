@@ -8,6 +8,14 @@
 
   "forwardPorts": [3000],
 
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js App",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
+
   // This command runs after the container is created and features are installed
   "postCreateCommand": "bash .devcontainer/post-create.sh",
 

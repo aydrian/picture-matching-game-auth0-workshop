@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: [''],
+  allowedDevOrigins: ['*.app.github.dev'],
   typescript: {
     ignoreBuildErrors: true,
   },

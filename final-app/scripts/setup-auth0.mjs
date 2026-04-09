@@ -11,8 +11,17 @@ const __dirname = path.dirname(__filename);
 // --- Configuration ---
 const appName = "Auth0 Picture Matching Game Final App"; // Slightly different name for clarity
 const appPort = 3000;
-const callbackUrl = `http://localhost:${appPort}`;
 const envFilePath = path.join(__dirname, "..", ".env.local"); // Path to final-app/.env.local
+
+// Read APP_BASE_URL from existing .env.local (set by post-create.sh), fall back to localhost
+let callbackUrl = `http://localhost:${appPort}`;
+if (fs.existsSync(envFilePath)) {
+  const existing = fs.readFileSync(envFilePath, "utf-8");
+  const match = existing.match(/^APP_BASE_URL=(.*)$/m);
+  if (match && match[1]) {
+    callbackUrl = match[1].replace(/['"]/g, "").trim();
+  }
+}
 
 function runCommand(command) {
   try {
