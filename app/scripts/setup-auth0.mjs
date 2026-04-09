@@ -27,6 +27,16 @@ function runCommand(command) {
   }
 }
 
+function runInteractiveCommand(command) {
+  try {
+    console.log(`› ${command}`);
+    execSync(command, { stdio: "inherit" });
+  } catch (error) {
+    console.error(`Error executing command: ${command}`);
+    process.exit(1);
+  }
+}
+
 async function main() {
   console.log("🚀 Starting Auth0 Application Setup...");
 
@@ -44,16 +54,19 @@ async function main() {
     process.exit(1);
   }
 
-  // 2. Login
+  // 2. Login (skip if already authenticated)
   console.log("\nStep 1: Authenticating with Auth0...");
-  console.log(
-    "Your browser will open for you to log in to your Auth0 account."
-  );
-  console.log(
-    "Please ensure you log in to the Auth0 tenant you wish to use for this workshop."
-  );
-  runCommand("auth0 login");
-  console.log("✅ Authentication successful!");
+  try {
+    runCommand("auth0 tenants list");
+    console.log("Already authenticated with Auth0.");
+  } catch {
+    console.log("Not logged in. Opening browser for authentication...");
+    console.log(
+      "Please ensure you log in to the Auth0 tenant you wish to use for this workshop."
+    );
+    runInteractiveCommand("auth0 login");
+    console.log("✅ Authentication successful!");
+  }
 
   // 3. Create the Application
   console.log(`\nStep 2: Creating the '${appName}' application...`);
