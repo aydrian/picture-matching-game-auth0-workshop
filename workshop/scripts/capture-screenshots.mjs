@@ -91,8 +91,6 @@ async function login() {
     headless: false,
     channel: "chrome",
     viewport: VIEWPORT,
-    ignoreDefaultArgs: ["--enable-automation"],
-    args: ["--disable-blink-features=AutomationControlled"],
   });
   const page = await context.newPage();
 
