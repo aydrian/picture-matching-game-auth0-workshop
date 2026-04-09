@@ -72,7 +72,7 @@ async function screenshot(page, name, options = {}) {
 async function login() {
   console.log("\n🔐 Login mode — a browser will open for you to log in.\n");
 
-  const browser = await chromium.launch({ headless: false });
+  const browser = await chromium.launch({ headless: false, channel: "chrome" });
   const context = await browser.newContext({ viewport: VIEWPORT });
   const page = await context.newPage();
 
