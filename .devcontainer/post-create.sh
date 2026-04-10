@@ -4,7 +4,9 @@
 set -e
 
 echo "Installing Auth0 CLI..."
-curl -sSfL https://raw.githubusercontent.com/auth0/auth0-cli/main/install.sh | sh -s -- -b /usr/local/bin
+if ! curl -sSfL https://raw.githubusercontent.com/auth0/auth0-cli/main/install.sh | sudo sh -s -- -b /usr/local/bin; then
+  echo "⚠️  Auth0 CLI installation failed. You can install it manually later."
+fi
 
 echo "Ensuring Corepack is enabled and pnpm is available..."
 corepack enable
