@@ -2,12 +2,12 @@
 set -o pipefail
 
 echo "Installing Auth0 CLI..."
-if ! timeout 60 bash -c 'curl -sSfL https://raw.githubusercontent.com/auth0/auth0-cli/main/install.sh | sh -s -- -b /usr/local/bin'; then
+if ! timeout 60 bash -c 'curl -sSfL https://raw.githubusercontent.com/auth0/auth0-cli/main/install.sh | sudo -n sh -s -- -b /usr/local/bin'; then
   echo "Warning: Auth0 CLI installation failed or timed out. You can install it manually later."
 fi
 
 echo "Ensuring Corepack is enabled and pnpm is available..."
-corepack enable
+sudo -n corepack enable
 
 echo "Installing all dependencies for the workshop..."
 pnpm install
