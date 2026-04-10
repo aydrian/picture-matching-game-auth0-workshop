@@ -24,7 +24,7 @@ For Token Vault to work, we need to **update** this existing connection to:
 3. Enable `offline` access so Auth0 can store and refresh tokens automatically
 
 > **Note**
-> To save time, this workshop uses a shared Google Client ID and Secret that are pre-provisioned via Codespaces secrets. In a production app, you'd create your own Google OAuth credentials. See the [Auth0 Token Vault Google integration guide](https://auth0.com/ai/docs/integrations/google) for instructions on setting that up.
+> If you created your own Google OAuth credentials in the [Prerequisites](00-Welcome.md#-prerequisites) *(recommended)*, set the `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` environment variables in your terminal before running the commands below. Otherwise, shared credentials are available via Codespaces secrets as a fallback. See the [Auth0 Token Vault Google integration guide](https://auth0.com/ai/docs/integrations/google) for details on creating your own.
 
 ### 🧑‍💻 Exercise: Update the Connection via CLI
 

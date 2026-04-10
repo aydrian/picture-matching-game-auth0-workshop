@@ -63,6 +63,7 @@ Before you begin, make sure you have:
 - [ ] **GitHub Account** — Required for GitHub Codespaces
 - [ ] **Auth0 Account** — A free tenant is all you need. [Sign up here](https://auth0.com/signup) if you don't have one.
 - [ ] **Google Account** — Any standard `@gmail.com` account for Google Drive access
+- [ ] **Google OAuth Credentials** *(recommended)* — A Google Client ID and Client Secret for the Google Drive API. Follow the [Auth0 Token Vault Google integration guide](https://auth0.com/ai/docs/integrations/google) to create them. Shared credentials are available via Codespaces secrets as a fallback.
 
 #### Prepare Your Game Images
 
