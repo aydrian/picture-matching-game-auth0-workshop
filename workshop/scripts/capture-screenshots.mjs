@@ -133,7 +133,7 @@ async function captureModule01(context) {
   // Wait for the countdown to finish (3 seconds) + "Go!" + reveal phase
   await page.waitForTimeout(6000);
   // Now cards should be face-down after the reveal — click two to flip them
-  const cards = page.locator('[style*="perspective"]').first().locator("button");
+  const cards = page.locator('.perspective-1000 button');
   const cardCount = await cards.count();
   if (cardCount >= 2) {
     await cards.nth(0).click();
@@ -226,7 +226,7 @@ async function captureModule05(context, folderName) {
   // Wait for countdown + reveal
   await page.waitForTimeout(6000);
   // Flip a couple of cards
-  const cards = page.locator('[style*="perspective"]').first().locator("button");
+  const cards = page.locator('.perspective-1000 button');
   const cardCount = await cards.count();
   if (cardCount >= 2) {
     await cards.nth(0).click();
