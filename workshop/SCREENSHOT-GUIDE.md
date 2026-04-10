@@ -115,31 +115,31 @@ Run `node workshop/scripts/capture-screenshots.mjs --module 01` with the **start
 
 Complete Module 03 CLI steps, then capture these Auth0 Dashboard screenshots manually at 1280x800.
 
-- [ ] **`03-dashboard-social-connections.png`**
+- [x] **`03-dashboard-social-connections.png`**
   - **What:** Auth0 Dashboard showing the Google/Gmail social connection
   - **Navigate to:** [manage.auth0.com](https://manage.auth0.com) > Authentication > Social
   - **State:** After updating the Google connection via CLI (Step 2)
   - **Capture:** The social connections list with Google/Gmail visible, showing it's enabled
 
-- [ ] **`03-dashboard-grant-types.png`**
+- [x] **`03-dashboard-grant-types.png`**
   - **What:** Application grant types with Token Vault enabled
   - **Navigate to:** Applications > Applications > Auth0 Picture Matching Game Workshop App > Settings > Advanced Settings > Grant Types
   - **State:** After running the Step 3 CLI command
   - **Capture:** The Grant Types checkboxes with "Token Vault" checked
 
-- [ ] **`03-dashboard-my-account-api.png`**
+- [x] **`03-dashboard-my-account-api.png`**
   - **What:** The Auth0 My Account API in the APIs list
   - **Navigate to:** Applications > APIs
   - **State:** After running the Step 4 CLI command
   - **Capture:** The APIs list showing "Auth0 My Account" with its identifier
 
-- [ ] **`03-dashboard-client-grant.png`**
+- [x] **`03-dashboard-client-grant.png`**
   - **What:** Application access to the My Account API
   - **Navigate to:** Applications > APIs > Auth0 My Account > Application Access
   - **State:** After running the Step 5 CLI command
   - **Capture:** The Application Access tab showing your app authorized with the connected accounts scopes
 
-- [ ] **`03-dashboard-mrrt-policy.png`**
+- [x] **`03-dashboard-mrrt-policy.png`**
   - **What:** Multi-Resource Refresh Token policy configuration
   - **Navigate to:** Applications > Applications > Auth0 Picture Matching Game Workshop App > Settings > Multi-Resource Refresh Token
   - **State:** After running the Step 6 CLI command
