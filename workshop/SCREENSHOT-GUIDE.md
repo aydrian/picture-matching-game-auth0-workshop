@@ -97,15 +97,15 @@ The following images must be captured manually. Use a **1280x800** browser windo
 
 Run `node workshop/scripts/capture-screenshots.mjs --module 01` with the **starter app** on port 3000.
 
-- [ ] **`01-home-page.png`** *(automated)*
+- [x] **`01-home-page.png`** _(automated)_
   - **What:** The app's home/landing page after logging in
   - **Capture:** Full page with hero section, "How to Play" instructions, difficulty selector
 
-- [ ] **`01-game-board.png`** *(automated)*
+- [x] **`01-game-board.png`** _(automated)_
   - **What:** A game in progress with default animal card images
   - **Capture:** Card grid with a mix of face-up and face-down cards, timer, and score
 
-- [ ] **`01-settings-placeholder.png`** *(automated)*
+- [x] **`01-settings-placeholder.png`** _(automated)_
   - **What:** The settings page before Token Vault is configured
   - **Capture:** Disabled "Connect Google Drive" placeholder, "not yet implemented" message, default images preview
 
@@ -151,27 +151,27 @@ Complete Module 03 CLI steps, then capture these Auth0 Dashboard screenshots man
 
 Run `node workshop/scripts/capture-screenshots.mjs --module 05 --folder "Game Photos"` with the **final app** on port 3000. Two screenshots require manual capture.
 
-- [ ] **`05-settings-connect-button.png`** *(automated — requires Google NOT connected)*
+- [x] **`05-settings-connect-button.png`** _(automated — requires Google NOT connected)_
   - **What:** Settings page with the active "Connect Google Drive" button
   - **Capture:** The "Connect Google Drive" button with the Google icon (blue/active, not the greyed-out placeholder)
   - **Notes:** Disconnect Google Drive first, then run `--module 05` without `--folder`
 
-- [ ] **`05-google-consent-screen.png`** *(manual)*
+- [ ] **`05-google-consent-screen.png`** _(manual)_
   - **What:** Google's OAuth consent screen showing requested permissions
   - **Navigate to:** Click "Connect Google Drive" button
   - **Capture:** The consent screen showing "This app wants to: See and download all your Google Drive files" and the Allow/Cancel buttons
   - **Notes:** If you see the "unverified app" warning first, capture that too (optional).
 
-- [ ] **`05-settings-connected.png`** *(automated — requires Google connected)*
+- [x] **`05-settings-connected.png`** _(automated — requires Google connected)_
   - **What:** Settings page after successfully connecting Google Drive
   - **Capture:** The green "Google Drive Connected" status badge, folder name input, and "Load" button
 
-- [ ] **`05-settings-images-loaded.png`** *(automated — requires `--folder`)*
+- [x] **`05-settings-images-loaded.png`** _(automated — requires `--folder`)_
   - **What:** Settings page with Google Drive image thumbnails loaded
   - **Capture:** The thumbnail grid showing images from the Google Drive folder
   - **Notes:** Create a folder in Google Drive with 5+ images before capturing
 
-- [ ] **`05-game-custom-photos.png`** *(automated)*
+- [x] **`05-game-custom-photos.png`** _(automated)_
   - **What:** Game board using custom photos from Google Drive
   - **Capture:** Card grid with some cards revealed showing the user's own photos
 
@@ -179,21 +179,21 @@ Run `node workshop/scripts/capture-screenshots.mjs --module 05 --folder "Game Ph
 
 ## Summary
 
-| #   | Filename                              | Module | Capture    |
-| --- | ------------------------------------- | ------ | ---------- |
-| 1   | `banner.png`                          | 00     | Manual     |
-| 2   | `01-home-page.png`                    | 01     | Automated  |
-| 3   | `01-game-board.png`                   | 01     | Automated  |
-| 4   | `01-settings-placeholder.png`         | 01     | Automated  |
-| 5   | `03-dashboard-social-connections.png` | 03     | Manual     |
-| 6   | `03-dashboard-grant-types.png`        | 03     | Manual     |
-| 7   | `03-dashboard-my-account-api.png`     | 03     | Manual     |
-| 8   | `03-dashboard-client-grant.png`       | 03     | Manual     |
-| 9   | `03-dashboard-mrrt-policy.png`        | 03     | Manual     |
-| 10  | `05-settings-connect-button.png`      | 05     | Automated  |
-| 11  | `05-google-consent-screen.png`        | 05     | Manual     |
-| 12  | `05-settings-connected.png`           | 05     | Automated  |
-| 13  | `05-settings-images-loaded.png`       | 05     | Automated  |
-| 14  | `05-game-custom-photos.png`           | 05     | Automated  |
+| #   | Filename                              | Module | Capture   |
+| --- | ------------------------------------- | ------ | --------- |
+| 1   | `banner.png`                          | 00     | Manual    |
+| 2   | `01-home-page.png`                    | 01     | Automated |
+| 3   | `01-game-board.png`                   | 01     | Automated |
+| 4   | `01-settings-placeholder.png`         | 01     | Automated |
+| 5   | `03-dashboard-social-connections.png` | 03     | Manual    |
+| 6   | `03-dashboard-grant-types.png`        | 03     | Manual    |
+| 7   | `03-dashboard-my-account-api.png`     | 03     | Manual    |
+| 8   | `03-dashboard-client-grant.png`       | 03     | Manual    |
+| 9   | `03-dashboard-mrrt-policy.png`        | 03     | Manual    |
+| 10  | `05-settings-connect-button.png`      | 05     | Automated |
+| 11  | `05-google-consent-screen.png`        | 05     | Manual    |
+| 12  | `05-settings-connected.png`           | 05     | Automated |
+| 13  | `05-settings-images-loaded.png`       | 05     | Automated |
+| 14  | `05-game-custom-photos.png`           | 05     | Automated |
 
 **Total: 14 images** — 7 automated (Playwright) + 7 manual (1 banner, 5 dashboard, 1 Google consent)
